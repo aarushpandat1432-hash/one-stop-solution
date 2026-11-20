@@ -1,1 +1,224 @@
 
+<p>Enquire about replacement parts and accessories for your machine.</p></div>
+
+<div class="service">
+<div class="sicon">📋</div>
+<h3>AMC Enquiries</h3>
+<p>Ask about annual maintenance contract options for your site.</p>
+</div>
+
+<div class="service">
+<div class="sicon">🇮🇳</div>
+<h3>Across India</h3>
+<p>Product and service enquiries accepted from customers across India. Service coverage is confirmed by location.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="banner">
+<div>
+<h2>Need a machine, spare part or repair?</h2>
+<p>Share your requirement and our team will get back to you.</p>
+</div>
+<a class="btn btn-light" href="https://wa.me/918010292729?text=Hello%20One%20Stop%20Solution%2C%20I%20need%20a%20quote." target="_blank">Enquire on WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="section-head">
+<span class="kicker">CONTACT US</span>
+<h2>Get a Quote or Service Request</h2>
+<p>Fill in your details. The form will prepare an enquiry message on WhatsApp.</p>
+</div>
+
+<div class="contact-grid">
+<div class="contact-card">
+<h3>One Stop Solution</h3>
+<p>Smart Products • Reliable Service</p>
+
+<div class="contact-line">
+<span>📞</span>
+<div><b>Phone / WhatsApp</b>8010292729</div>
+</div>
+
+<div class="contact-line">
+<span>📍</span>
+<div><b>Location</b>Faridabad, Haryana, India</div>
+</div>
+
+<div class="contact-line">
+<span>🇮🇳</span>
+<div><b>Service Enquiries</b>Across India (subject to location confirmation)</div>
+</div>
+
+<a class="btn btn-primary" style="width:100%;margin-top:12px" href="https://wa.me/918010292729" target="_blank">Chat on WhatsApp</a>
+</div>
+
+<div class="form-card">
+<h3>Send an Enquiry</h3>
+<form id="enquiryForm">
+<input name="name" placeholder="Your name" required>
+<input name="phone" placeholder="Mobile number" inputmode="tel" required>
+
+<select name="requirement" required>
+<option value="">Select requirement</option>
+<option>Buy a machine</option>
+<option>Buy spare parts</option>
+<option>Repairing service</option>
+<option>Installation</option>
+<option>Maintenance / AMC</option>
+</select>
+
+<input name="city" placeholder="City / State" required>
+<textarea name="message" placeholder="Machine name, model and issue / product details"></textarea>
+
+<button class="btn btn-primary" type="submit">Send Enquiry on WhatsApp</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-row">
+<div>
+<div class="footer-brand">ONE STOP SOLUTION</div>
+<div>Sales • Repairing • Spare Parts • Maintenance</div>
+</div>
+<div>
+Faridabad, Haryana, India<br>
+Phone: 8010292729
+</div>
+</div>
+<div class="footer-small">
+© <span id="year"></span> One Stop Solution. All rights reserved.
+</div>
+</div>
+</footer>
+
+<button class="btn btn-primary cart-fab" id="cartToggle">
+Enquiry Cart <span class="cart-count" id="cartCount">0</span>
+</button>
+
+<div class="cart-panel" id="cartPanel">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<b>Your Enquiry Cart</b>
+<button id="cartClose">×</button>
+</div>
+<div id="cartItems">No products added yet.</div>
+<button class="btn btn-primary" id="sendCart" style="width:100%">
+Send Cart on WhatsApp
+</button>
+<p>Final price, delivery and payment terms will be confirmed by our team.</p>
+</div>
+
+<script>
+const phone='918010292729';
+
+const menuToggle=document.getElementById('menuToggle');
+const nav=document.getElementById('nav');
+
+menuToggle.addEventListener('click',()=>{
+nav.classList.toggle('open');
+menuToggle.textContent=nav.classList.contains('open')?'✕':'☰';
+});
+
+nav.querySelectorAll('a').forEach(a=>{
+a.addEventListener('click',()=>{
+nav.classList.remove('open');
+menuToggle.textContent='☰';
+});
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+document.querySelectorAll('.filter').forEach(btn=>{
+btn.addEventListener('click',()=>{
+document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+
+document.querySelectorAll('.product').forEach(p=>{
+p.style.display=(btn.dataset.filter==='all'||p.dataset.category===btn.dataset.filter)?'flex':'none';
+});
+});
+});
+
+let cart=[];
+
+function renderCart(){
+document.getElementById('cartCount').textContent=cart.length;
+const box=document.getElementById('cartItems');
+
+if(!cart.length){
+box.textContent='No products added yet.';
+return;
+}
+
+box.innerHTML=cart.map((item,i)=>
+`<div class="cart-item">
+<span>${item}</span>
+<button data-remove="${i}">Remove</button>
+</div>`
+).join('');
+
+box.querySelectorAll('[data-remove]').forEach(b=>{
+b.addEventListener('click',()=>{
+cart.splice(Number(b.dataset.remove),1);
+renderCart();
+});
+});
+}
+
+document.querySelectorAll('.add').forEach(btn=>{
+btn.addEventListener('click',()=>{
+cart.push(btn.dataset.name);
+renderCart();
+document.getElementById('cartPanel').classList.add('open');
+});
+});
+
+document.getElementById('cartToggle').addEventListener('click',()=>{
+document.getElementById('cartPanel').classList.toggle('open');
+});
+
+document.getElementById('cartClose').addEventListener('click',()=>{
+document.getElementById('cartPanel').classList.remove('open');
+});
+
+document.getElementById('sendCart').addEventListener('click',()=>{
+if(!cart.length){
+alert('Please add a product first.');
+return;
+}
+
+const msg='Hello One Stop Solution, I want to enquire about:\n'+
+cart.map((x,i)=>(i+1)+'. '+x).join('\n')+
+'\nPlease share price, availability, delivery and payment details.';
+
+window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(msg),'_blank');
+});
+
+document.getElementById('enquiryForm').addEventListener('submit',e=>{
+e.preventDefault();
+const d=new FormData(e.target);
+
+const msg=`Hello One Stop Solution,
+Name: ${d.get('name')}
+Mobile: ${d.get('phone')}
+Requirement: ${d.get('requirement')}
+City/State: ${d.get('city')}
+Details: ${d.get('message')}`;
+
+window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(msg),'_blank');
+});
+</script>
+
+</body>
+</html>
