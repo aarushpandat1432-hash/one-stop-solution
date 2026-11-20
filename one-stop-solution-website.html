@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="One Stop Solution - vending machines, incinerators, water coolers, spare parts, repair, installation and maintenance services across India.">
+<meta name="theme-color" content="#102a43">
+<title>One Stop Solution | Products, Spare Parts & Repair Services</title>
+<style>
+:root{--navy:#102a43;--blue:#1769aa;--cyan:#14b8a6;--ink:#172b4d;--muted:#62748a;--bg:#f4f8fc;--line:#e3ebf3;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
+header{background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 3px 18px #102a4310}
+.navbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--navy);font-size:18px}
+.logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;color:#fff;font-weight:900;letter-spacing:-1px}
+nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;color:#40566e}
+nav a:hover{color:var(--blue)}.nav-actions{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:10px;padding:12px 17px;font-weight:700;cursor:pointer;font-size:14px;transition:.2s}
+.btn-primary{background:var(--blue);color:white}.btn-primary:hover{background:#10558e;transform:translateY(-1px)}
+.btn-light{background:#eaf3fb;color:var(--navy)}.btn-outline{border:1px solid #cbd9e7;background:#fff;color:var(--navy)}
+.menu{display:none;background:white;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:20px}
+.hero{background:radial-gradient(circle at 85% 15%,#2379b955,transparent 28%),linear-gradient(120deg,#0d263e,#123f66 70%,#1769aa);color:white;padding:76px 0 68px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:38px;align-items:center}
+.eyebrow{display:inline-block;background:#ffffff1b;border:1px solid #ffffff35;border-radius:99px;padding:7px 13px;font-size:12px;letter-spacing:.8px;font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.08;margin:20px 0 18px;letter-spacing:-1.8px}
+.hero p{color:#d8e8f6;font-size:17px;max-width:650px;margin:0 0 27px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}.hero .btn-light{background:white;color:var(--navy)}
+.hero-visual{background:#ffffff12;border:1px solid #ffffff30;border-radius:24px;padding:24px;backdrop-filter:blur(8px)}
+.visual-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.visual-tile{min-height:115px;border-radius:15px;background:#ffffff13;border:1px solid #ffffff25;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.visual-tile b{font-size:14px}.visual-icon{font-size:30px}
+.trust{background:#fff;border-bottom:1px solid var(--line)}.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:20px 0}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#40566e}.trust-item span{font-size:22px}
+section{padding:66px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 32px}.kicker{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+h2{font-size:clamp(27px,3.5vw,38px);line-height:1.15;color:var(--navy);margin:9px 0 12px;letter-spacing:-.7px}
+.section-head p{color:var(--muted);margin:0}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:0 0 25px}
+.filter{border:1px solid var(--line);background:white;color:#40566e;padding:9px 14px;border-radius:99px;font-weight:700;cursor:pointer}
+.filter.active{background:var(--navy);color:white;border-color:var(--navy)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 7px 22px #102a4308}
+.product-art{height:155px;background:linear-gradient(135deg,#e8f2fa,#f5f9fd);display:grid;place-items:center;font-size:58px}
+.product-body{padding:18px;display:flex;flex-direction:column;flex:1}
+.product-tag{font-size:10px;font-weight:800;letter-spacing:.7px;color:var(--blue);text-transform:uppercase}
+.product h3{font-size:17px;color:var(--navy);margin:7px 0}
+.product p{font-size:13px;color:var(--muted);margin:0 0 15px;flex:1}
+.product-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.product-foot .btn{padding:10px 12px;font-size:12px}
+.price-note{font-size:12px;color:var(--muted);font-weight:700}
+.parts{background:#edf4fa}
+.parts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.part{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;display:flex;gap:13px;align-items:flex-start}
+.part-icon{width:44px;height:44px;border-radius:12px;background:#eaf3fb;display:grid;place-items:center;font-size:22px;flex-shrink:0}
+.part h3{margin:0 0 4px;color:var(--navy);font-size:15px}.part p{margin:0;color:var(--muted);font-size:13px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px}
+.service .sicon{font-size:28px}.service h3{color:var(--navy);margin:10px 0 6px}.service p{color:var(--muted);font-size:14px;margin:0}
+.banner{background:linear-gradient(110deg,#102a43,#1769aa);border-radius:22px;padding:34px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.banner h2{color:white;margin:0 0 7px}.banner p{color:#d8e8f6;margin:0}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px}
+.contact-card,.form-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:25px}
+.contact-card h3,.form-card h3{color:var(--navy);margin-top:0}
+.contact-line{display:flex;gap:12px;margin:18px 0;color:#40566e;font-size:14px}.contact-line b{display:block;color:var(--navy)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #d7e1eb;border-radius:9px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+textarea{grid-column:1/-1;min-height:105px;resize:vertical}
+form button{grid-column:1/-1}
+footer{background:#0b2034;color:#d7e4ef;padding:36px 0 20px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-brand{font-weight:800;color:white;font-size:18px}.footer-small{color:#a9bdcf;font-size:12px;margin-top:17px}
+.cart-fab{position:fixed;right:18px;bottom:18px;z-index:30;box-shadow:0 8px 25px #102a4350}
+.cart-count{display:inline-grid;place-items:center;background:#fff;color:var(--blue);border-radius:50%;width:21px;height:21px;margin-left:6px;font-size:11px}
+.cart-panel{position:fixed;right:18px;bottom:78px;width:min(370px,calc(100% - 36px));background:#fff;border:1px solid var(--line);box-shadow:0 15px 45px #102a4330;border-radius:16px;padding:19px;z-index:31;display:none;max-height:70vh;overflow:auto}
+.cart-panel.open{display:block}.cart-item{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.cart-item button{border:0;background:none;color:#b42318;cursor:pointer}.cart-empty{color:var(--muted);font-size:14px}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+@media(max-width:900px){nav{gap:12px}.products{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr  .8fr}.trust-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.navbar{min-height:68px}.menu{display:block}.nav-actions{display:none}nav{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:16px 4%;border-top:1px solid var(--line);flex-direction:column;align-items:flex-start;box-shadow:0 10px 15px #102a4310}nav.open{display:flex}.hero{padding:54px 0}.hero-grid{grid-template-columns:1fr}.hero-visual{max-width:480px}.trust-row{gap:12px}.trust-item{font-size:12px}section{padding:50px 0}.products{gap:12px}.product-art{height:120px}.product-body{padding:13px}.product h3{font-size:15px}.product-foot .btn{width:100%}.parts-grid,.services-grid{grid-template-columns:1fr}.banner{align-items:flex-start;flex-direction:column}.contact-grid{grid-template-columns:1fr}form{grid-template-columns:1fr}textarea,form button{grid-column:auto}}
+@media(max-width:380px){.products{grid-template-columns:1fr}.trust-row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+ <div class="container navbar">
+  <a class="brand" href="#home"><span class="logo">OS</span><span>ONE STOP<br><small style="font-size:10px;letter-spacing:1.5px;color:#62748a">SOLUTION</small></span></a>
+  <button class="menu" id="menuToggle" aria-label="Open menu">☰</button>
+  <nav id="nav"><a href="#home">Home</a><a href="#products">Products</a><a href="#spares">Spare Parts</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+  <div class="nav-actions"><a class="btn btn-outline" href="tel:8010292729">Call Now</a><a class="btn btn-primary" href="https://wa.me/918010292729?text=Hello%20Smart%20Tech%20Solutions%2C%20I%20need%20product%20or%20service%20details." target="_blank" rel="noopener">WhatsApp</a></div>
+ </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div><span class="eyebrow">Sales • Repairing • Spare Parts • Maintenance</span>
+   <h1>Smart Machines.<br>Reliable Service.</h1>
+   <p>Your one-stop partner for sanitary pad vending machines, cloth bag vending machines, incinerators, water coolers, spare parts and technical support across India.</p>
+   <div class="hero-buttons"><a class="btn btn-light" href="#products">Explore Products</a><a class="btn btn-primary" style="background:#14b8a6" href="#contact">Get a Service Quote</a></div>
+  </div>
+  <div class="hero-visual"><div class="visual-grid">
+   <div class="visual-tile"><span class="visual-icon">🧼</span><b>Sanitary Pad Vending</b></div>
+   <div class="visual-tile"><span class="visual-icon">🛍️</span><b>Cloth Bag Vending</b></div>
+   <div class="visual-tile"><span class="visual-icon">♨️</span><b>Incinerator Machines</b></div>
+   <div class="visual-tile"><span class="visual-icon">💧</span><b>Water Coolers</b></div>
+  </div></div>
+ </div>
+</section>
+<div class="trust"><div class="container trust-row">
+ <div class="trust-item"><span>🇮🇳</span> Pan-India Enquiries</div><div class="trust-item"><span>🛠️</span> Repair & Maintenance</div><div class="trust-item"><span>⚙️</span> Spare Parts Support</div><div class="trust-item"><span>💬</span> Quick WhatsApp Response</div>
+</div></div>
+<section id="products"><div class="container">
+ <div class="section-head"><span class="kicker">Product range</span><h2>Machines & Equipment</h2><p>Explore our product categories. Ask us for specifications, availability and pricing.</p></div>
+ <div class="filters"><button class="filter active" data-filter="all">All Products</button><button class="filter" data-filter="vending">Vending Machines</button><button class="filter" data-filter="waste">Waste Management</button><button class="filter" data-filter="cooler">Water Coolers</button></div>
+ <div class="products">
+  <article class="product" data-category="vending"><div class="product-art">🧼</div><div class="product-body"><span class="product-tag">Vending Machine</span><h3>Sanitary Pad Vending Machine</h3><p>Manual and coin-operated vending machine options. Contact us for capacity and model details.</p><div class="product-foot"><span class="price-note">Price on request</span><button class="btn btn-primary add" data-name="Sanitary Pad Vending Machine">Add to Enquiry</button></div></div></article>
+  <article class="product" data-category="vending"><div class="product-art">🛍️</div><div class="product-body"><span class="product-tag">Vending Machine</span><h3>Cloth Bag Vending Machine</h3><p>Vending solutions for reusable cloth bags. Ask about machine configuration and options.</p><div class="product-foot"><span class="price-note">Price on request</span><button class="btn btn-primary add" data-name="Cloth Bag Vending Machine">Add to Enquiry</button></div></div></article>
+  <article class="product" data-category="waste"><div class="product-art">♨️</div><div class="product-body"><span class="product-tag">Waste Management</span><h3>Incinerator Machine</h3><p>Sanitary waste incinerator machines with service and maintenance support.</p><div class="product-foot"><span class="price-note">Price on request</span><button class="btn btn-primary add" data-name="Incinerator Machine">Add to Enquiry</button></div></div></article>
+  <article class="product" data-category="cooler"><div class="product-art">💧</div><div class="product-body"><span class="product-tag">Water Equipment</span><h3>Water Cooler</h3><p>Commercial water cooler options. Enquire for capacity, model and installation details.</p><div class="product-foot"><span class="price-note">Price on request</span><button class="btn btn-primary add" data-name="Water Cooler">Add to Enquiry</button></div></div></article>
+ </div>
+</div></section>
+<section class="parts" id="spares"><div class="container">
+ <div class="section-head"><span class="kicker">Genuine-fit components</span><h2>Repairing Products & Spare Parts</h2><p>Tell us your machine model and required part. We will confirm compatibility and availability.</p></div>
+ <div class="parts-grid">
+  <div class="part"><div class="part-icon">⚙️</div><div><h3>Motors & Gear Assemblies</h3><p>Drive components and mechanical assemblies.</p></div></div>
+  <div class="part"><div class="part-icon">🔌</div><div><h3>Electrical Components</h3><p>Wiring, switches, relays and connectors.</p></div></div>
+  <div class="part"><div class="part-icon">🎛️</div><div><h3>Control Panels & Timers</h3><p>Controls, boards and operating components.</p></div></div>
+  <div class="part"><div class="part-icon">🪙</div><div><h3>Coin Mechanisms</h3><p>Coin acceptors, knobs and vending mechanisms.</p></div></div>
+  <div class="part"><div class="part-icon">🚰</div><div><h3>Water Cooler Parts</h3><p>Cooling, water-line and dispensing components.</p></div></div>
+  <div class="part"><div class="part-icon">🔩</div><div><h3>Other Machine Parts</h3><p>Ask us for machine-specific spares and accessories.</p></div></div>
+ </div>
+ <p class="note" style="text-align:center">Part names are indicative categories. Exact availability and compatibility are confirmed before order.</p>
+</div></section>
+<section id="services"><div class="container">
+ <div class="section-head"><span class="kicker">Technical support</span><h2>Repairing & Service Solutions</h2><p>Support for installation, troubleshooting and maintenance of the machines listed on this website.</p></div>
+ <div class="services-grid">
+  <div class="service"><div class="sicon">🛠️</div><h3>Repairing</h3><p>Fault diagnosis and repair enquiries for vending machines, incinerators and water coolers.</p></div>
+  <div class="service"><div class="sicon">🏗️</div><h3>Installation</h3><p>Installation and commissioning enquiries for new equipment.</p></div>
+  <div class="service"><div class="sicon">🔧</div><h3>Preventive Maintenance</h3><p>Routine inspection, servicing and maintenance support.</p></div>
+  <div class="service"><div class="sicon">📦</div><h3>Spare Parts Supply</h3><p>Enquire about replacement parts and accessories for your machine.</p></div>
+  <div class="service"><div class="sicon">📋</div><h3>AMC Enquiries</h3><p>Ask about annual maintenance contract options for your site.</p></div>
+  <div class="service"><div class="sicon">🇮🇳</div><h3>Across India</h3><p>Product and service enquiries accepted from customers across India. Service coverage is confirmed by location.</p></div>
+ </div>
+</div></section>
+<section><div class="container"><div class="banner"><div><h2>Need a machine, spare part or repair?</h2><p>Share your requirement and our team will get back to you.</p></div><a class="btn btn-light" href="https://wa.me/918010292729?text=Hello%20Smart%20Tech%20Solutions%2C%20I%20need%20a%20quote." target="_blank" rel="noopener">Enquire on WhatsApp</a></div></div></section>
+<section id="contact"><div class="container">
+ <div class="section-head"><span class="kicker">Contact us</span><h2>Get a Quote or Service Request</h2><p>Fill in your details. The form will prepare an enquiry message on WhatsApp.</p></div>
+ <div class="contact-grid">
+  <div class="contact-card"><h3>One Stop Solution</h3><p style="color:var(--muted)">Smart Products • Reliable Service</p>
+   <div class="contact-line"><span>📞</span><div><b>Phone / WhatsApp</b>8010292729</div></div>
+   <div class="contact-line"><span>📍</span><div><b>Location</b>Faridabad, Haryana, India</div></div>
+   <div class="contact-line"><span>🇮🇳</span><div><b>Service Enquiries</b>Across India (subject to location confirmation)</div></div>
+   <a class="btn btn-primary" style="width:100%;margin-top:12px" href="https://wa.me/918010292729" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+  <div class="form-card"><h3>Send an Enquiry</h3>
+   <form id="enquiryForm">
+    <input name="name" placeholder="Your name" required>
+    <input name="phone" placeholder="Mobile number" inputmode="tel" required>
+    <select name="requirement" required><option value="">Select requirement</option><option>Buy a machine</option><option>Buy spare parts</option><option>Repairing service</option><option>Installation</option><option>Maintenance / AMC</option></select>
+    <input name="city" placeholder="City / State" required>
+    <textarea name="message" placeholder="Machine name, model and issue / product details"></textarea>
+    <button class="btn btn-primary" type="submit">Send Enquiry on WhatsApp</button>
+   </form>
+  </div>
+ </div>
+</div></section>
+</main>
+<footer><div class="container"><div class="footer-row"><div><div class="footer-brand">ONE STOP SOLUTION</div><div style="font-size:13px;color:#b7c8d7">Sales • Repairing • Spare Parts • Maintenance</div></div><div style="font-size:13px">Faridabad, Haryana, India<br>Phone: 8010292729</div></div><div class="footer-small">© <span id="year"></span> One Stop Solution. All rights reserved. Product details and service availability are confirmed at the time of enquiry.</div></div></footer>
+<button class="btn btn-primary cart-fab" id="cartToggle">Enquiry Cart <span class="cart-count" id="cartCount">0</span></button>
+<div class="cart-panel" id="cartPanel"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:var(--navy)">Your Enquiry Cart</b><button id="cartClose" style="border:0;background:none;font-size:20px;cursor:pointer">×</button></div><div id="cartItems" class="cart-empty" style="padding:14px 0">No products added yet.</div><button class="btn btn-primary" id="sendCart" style="width:100%">Send Cart on WhatsApp</button><p class="note">This is an enquiry cart. Final price, delivery and payment terms will be confirmed by our team.</p></div>
+<script>
+const phone='918010292729';
+const menuToggle=document.getElementById('menuToggle');
+const nav=document.getElementById('nav');
+menuToggle.addEventListener('click',()=>{nav.classList.toggle('open');menuToggle.textContent=nav.classList.contains('open')?'✕':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuToggle.textContent='☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ document.querySelectorAll('.product').forEach(p=>p.style.display=(btn.dataset.filter==='all'||p.dataset.category===btn.dataset.filter)?'flex':'none');
+}));
+let cart=[];
+function renderCart(){
+ document.getElementById('cartCount').textContent=cart.length;
+ const box=document.getElementById('cartItems');
+ if(!cart.length){box.className='cart-empty';box.textContent='No products added yet.';return;}
+ box.className='';
+ box.innerHTML=cart.map((item,i)=>`<div class="cart-item"><span>${item}</span><button data-remove="${i}">Remove</button></div>`).join('');
+ box.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>{cart.splice(Number(b.dataset.remove),1);renderCart()}));
+}
+document.querySelectorAll('.add').forEach(btn=>btn.addEventListener('click',()=>{cart.push(btn.dataset.name);renderCart();document.getElementById('cartPanel').classList.add('open')}));
+document.getElementById('cartToggle').addEventListener('click',()=>document.getElementById('cartPanel').classList.toggle('open'));
+document.getElementById('cartClose').addEventListener('click',()=>document.getElementById('cartPanel').classList.remove('open'));
+document.getElementById('sendCart').addEventListener('click',()=>{
+ if(!cart.length){alert('Please add a product first.');return;}
+ const msg='Hello One Stop Solution, I want to enquire about:\n'+cart.map((x,i)=>(i+1)+'. '+x).join('\n')+'\nPlease share price, availability, delivery and payment details.';
+ window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(msg),'_blank');
+});
+document.getElementById('enquiryForm').addEventListener('submit',e=>{
+ e.preventDefault();const d=new FormData(e.target);
+ const msg=`Hello One Stop Solution,\nName: ${d.get('name')}\nMobile: ${d.get('phone')}\nRequirement: ${d.get('requirement')}\nCity/State: ${d.get('city')}\nDetails: ${d.get('message')}`;
+ window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(msg),'_blank');
+});
+</script>
+</body></html>
