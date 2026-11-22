@@ -1,72 +1,54 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Stop Solution | Products, Spare Parts & Repairing</title>
-<meta name="description" content="One Stop Solution - Machines, spare parts, repairing and maintenance services.">
+<meta name="description" content="One Stop Solution - Vending Machines, SS Dustbins, Shoe Racks, Water Coolers, Spare Parts, Repairing and Maintenance Services.">
+<title>ONE STOP SOLUTION | Products & Services</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#f4f7fb;color:#17243a;line-height:1.6}
-header{background:#102a43;color:white;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-size:22px;font-weight:bold}
-nav{display:flex;gap:17px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:14px}
-.hero{background:linear-gradient(120deg,#102a43,#1769aa);color:white;text-align:center;padding:65px 15px}
-.hero h1{font-size:34px;margin-bottom:12px}
-.hero p{max-width:650px;margin:auto}
-.btn{display:inline-block;padding:12px 20px;background:#ffb703;color:#102a43;border-radius:7px;text-decoration:none;font-weight:bold;margin:12px 5px;border:0}
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#222;line-height:1.6}
+header{background:#092b50;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:25px;font-weight:bold;color:#ff9d24}
+nav{display:flex;flex-wrap:wrap;gap:16px}
+nav a{color:white;text-decoration:none;font-weight:bold}
+nav a:hover{color:#ff9d24}
+.hero{background:linear-gradient(120deg,#092b50,#17649b);color:white;text-align:center;padding:65px 15px}
+.hero h1{font-size:38px;margin-bottom:12px}
+.hero p{font-size:18px}
+.btn{display:inline-block;background:#ff8c1a;color:white;padding:11px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:15px}
 section{padding:45px 5%}
-.heading{text-align:center;margin-bottom:28px}
-.heading h2{font-size:28px;color:#102a43}
-.heading p{color:#667085}
-.slider{position:relative;overflow:hidden;background:#102a43;border-radius:14px}
-.slide{display:none;position:relative}
+.section-title{text-align:center;font-size:29px;color:#092b50;margin-bottom:25px}
+.slider{max-width:1100px;margin:25px auto;position:relative;overflow:hidden;border-radius:12px;background:#e5eaf0}
+.slide{display:none}
 .slide.active{display:block}
-.slide img{width:100%;height:360px;object-fit:cover;display:block;opacity:.65}
-.slide-caption{position:absolute;top:50%;left:5%;transform:translateY(-50%);color:white}
-.slide-caption h2{font-size:30px}
-.slider-btn{position:absolute;top:45%;background:#ffffffdd;border:0;padding:12px;border-radius:50%;cursor:pointer}
-.prev{left:10px}.next{right:10px}
-.dots{text-align:center;padding:10px}
-.dot{display:inline-block;width:9px;height:9px;background:#bbb;border-radius:50%;margin:4px}
-.dot.active{background:#1769aa}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:white;border-radius:13px;padding:14px;box-shadow:0 4px 18px #00000010}
-.card img{width:100%;height:200px;object-fit:contain;background:#f1f4f8;border-radius:8px}
-.card h3{font-size:17px;margin-top:10px}
-.card p{font-size:13px;color:#667085;margin:6px 0}
-.price{font-size:21px;font-weight:bold;color:#16804b;margin-top:12px}
-.gst{font-size:11px;color:#667085}
-.total{font-size:12px;font-weight:bold;margin:5px 0}
-.wa{display:block;text-align:center;background:#1769aa;color:white;text-decoration:none;padding:11px;border-radius:7px;margin-top:12px;font-weight:bold}
-.wa:hover{background:#102a43}
-.about{background:#e7f0f8;text-align:center}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 14px #0000000d}
-.service h3{color:#1769aa;margin-bottom:8px}
-.contact{background:#eaf2fa}
-.form{max-width:600px;margin:auto;background:white;padding:25px;border-radius:13px}
-.form input,.form textarea,.form select{width:100%;padding:13px;margin:8px 0;border:1px solid #ccd5df;border-radius:7px;font-size:15px}
-.form button{width:100%;padding:14px;background:#16804b;color:white;border:0;border-radius:7px;font-size:16px;font-weight:bold}
-footer{background:#102a43;color:white;text-align:center;padding:25px}
-.float{position:fixed;right:15px;bottom:18px;background:#20b85a;color:white;padding:13px 17px;border-radius:30px;text-decoration:none;font-weight:bold;z-index:10}
-@media(max-width:700px){
- header{justify-content:center;gap:12px}
- nav{justify-content:center;gap:12px}
- .hero h1{font-size:27px}
- .cards{grid-template-columns:repeat(2,1fr);gap:12px}
- .card{padding:10px}
- .card img{height:145px}
- .service-grid{grid-template-columns:1fr}
- .slide img{height:260px}
- .slide-caption h2{font-size:22px}
-}
-@media(max-width:380px){
- .cards{grid-template-columns:1fr}
+.slide img{width:100%;height:350px;object-fit:contain;background:white}
+.slide-caption{text-align:center;padding:12px;font-weight:bold;color:#092b50}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #00000012;text-align:center;padding-bottom:18px}
+.card img{width:100%;height:210px;object-fit:contain;background:#fff;padding:10px}
+.card h3{color:#092b50;margin:10px}
+.card p{padding:0 12px;font-size:14px}
+.price{font-size:19px;font-weight:bold;color:#e66c00;margin:10px}
+.small{font-size:13px;color:#555}
+.card .btn{margin-top:10px}
+.parts{background:#eaf1f8}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.service{background:white;padding:25px;border-radius:10px;text-align:center;box-shadow:0 3px 10px #00000010}
+.service h3{color:#092b50;margin-bottom:8px}
+.contact{background:#092b50;color:white}
+.contact .section-title{color:white}
+.contact-box{max-width:600px;margin:auto}
+input,textarea,select{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:6px;font-size:15px}
+button{border:0;cursor:pointer}
+footer{background:#061c33;color:white;text-align:center;padding:20px}
+@media(max-width:600px){
+.hero h1{font-size:29px}
+.slide img{height:220px}
+header{justify-content:center}
+nav{justify-content:center}
 }
 </style>
 </head>
@@ -74,241 +56,178 @@ footer{background:#102a43;color:white;text-align:center;padding:25px}
 <body>
 
 <header>
- <div class="logo">ONE STOP SOLUTION</div>
- <nav>
-  <a href="#home">Home</a>
-  <a href="#products">Products</a>
-  <a href="#parts">Spare Parts</a>
-  <a href="#repair">Repairing</a>
-  <a href="#contact">Contact</a>
- </nav>
+<div class="logo">ONE STOP SOLUTION</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#spares">Spare Parts</a>
+<a href="#services">Repairing</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <div class="hero" id="home">
- <h1>Everything You Need, All in One Place</h1>
- <p>Machines, Spare Parts, Repairing & Maintenance Solutions.</p>
- <a class="btn" href="#products">Explore Products</a>
- <a class="btn" href="#contact">Contact Us</a>
+<h1>ONE STOP SOLUTION</h1>
+<p>Products | Spare Parts | Repairing | Maintenance</p>
+<p>Quality Products and Reliable Services at One Place</p>
+<a class="btn" href="#products">Explore Products</a>
 </div>
 
-<!-- AUTOMATIC SLIDER -->
 <section>
- <div class="slider">
-  <div class="slide active">
-   <img src="images/slide1.jpg" alt="Our Machines">
-   <div class="slide-caption">
-    <h2>Quality Machines</h2>
-    <p>Reliable Products & Solutions</p>
-   </div>
-  </div>
-  <div class="slide">
-   <img src="images/slide2.jpg" alt="Spare Parts">
-   <div class="slide-caption">
-    <h2>Spare Parts</h2>
-    <p>Genuine Parts & Components</p>
-   </div>
-  </div>
-  <div class="slide">
-   <img src="images/slide3.jpg" alt="Repairing">
-   <div class="slide-caption">
-    <h2>Repairing & Maintenance</h2>
-    <p>Professional Service Support</p>
-   </div>
-  </div>
-  <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
-  <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
- </div>
- <div class="dots">
-  <span class="dot active"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
- </div>
+<h2 class="section-title">Our Product Gallery</h2>
+<div class="slider">
+<div class="slide active">
+<img src="images/slide1.jpg" alt="Our Products" onerror="this.style.display='none'">
+<div class="slide-caption">Quality Products</div>
+</div>
+<div class="slide">
+<img src="images/slide2.jpg" alt="Vending Machines" onerror="this.style.display='none'">
+<div class="slide-caption">Vending Machine Solutions</div>
+</div>
+<div class="slide">
+<img src="images/slide3.jpg" alt="Water Coolers and Dustbins" onerror="this.style.display='none'">
+<div class="slide-caption">Complete Product Range</div>
+</div>
+</div>
 </section>
 
-<!-- PRODUCTS -->
 <section id="products">
- <div class="heading">
-  <h2>Our Products</h2>
-  <p>Quality Machines & Equipment</p>
- </div>
- <div class="cards" id="productCards"></div>
+<h2 class="section-title">Our Products</h2>
+<div class="products" id="productCards"></div>
 </section>
 
-<!-- SPARE PARTS -->
-<section id="parts" style="background:#eaf2fa">
- <div class="heading">
-  <h2>Spare Parts</h2>
-  <p>Machine Parts & Components</p>
- </div>
- <div class="cards">
-  <div class="card">
-   <img src="images/part1.jpg" alt="Machine spare part">
-   <h3>Electrical Components</h3>
-   <p>Electrical parts and machine control components.</p>
-   <a class="wa" href="#" onclick="partEnquiry('Electrical Components');return false">Enquire on WhatsApp</a>
-  </div>
-  <div class="card">
-   <img src="images/part2.jpg" alt="Machine mechanical parts">
-   <h3>Mechanical Parts</h3>
-   <p>Mechanical components and assemblies.</p>
-   <a class="wa" href="#" onclick="partEnquiry('Mechanical Parts');return false">Enquire on WhatsApp</a>
-  </div>
-  <div class="card">
-   <img src="images/part3.jpg" alt="Machine accessories">
-   <h3>Machine Accessories</h3>
-   <p>Accessories and replacement components.</p>
-   <a class="wa" href="#" onclick="partEnquiry('Machine Accessories');return false">Enquire on WhatsApp</a>
-  </div>
- </div>
+<section class="parts" id="spares">
+<h2 class="section-title">Spare Parts Catalogue</h2>
+<div class="products">
+<div class="card">
+<img src="images/part1.jpg" alt="Electrical Components">
+<h3>Electrical Components</h3>
+<p>Electrical parts and components for machines.</p>
+<a class="btn" href="https://wa.me/918010292729?text=Hello%2C%20I%20need%20electrical%20spare%20parts" target="_blank">Enquire on WhatsApp</a>
+</div>
+<div class="card">
+<img src="images/part2.jpg" alt="Mechanical Parts">
+<h3>Mechanical Parts</h3>
+<p>Mechanical spare parts and machine accessories.</p>
+<a class="btn" href="https://wa.me/918010292729?text=Hello%2C%20I%20need%20mechanical%20spare%20parts" target="_blank">Enquire on WhatsApp</a>
+</div>
+<div class="card">
+<img src="images/part3.jpg" alt="Machine Accessories">
+<h3>Machine Accessories</h3>
+<p>Accessories and replacement parts for machines.</p>
+<a class="btn" href="https://wa.me/918010292729?text=Hello%2C%20I%20need%20machine%20accessories" target="_blank">Enquire on WhatsApp</a>
+</div>
+</div>
 </section>
 
-<!-- REPAIRING -->
-<section id="repair">
- <div class="heading">
-  <h2>Repairing & Maintenance</h2>
-  <p>Reliable Machine Service Solutions</p>
- </div>
- <div class="service-grid">
-  <div class="service">
-   <h3>Machine Repairing</h3>
-   <p>Machine fault checking, troubleshooting and repairing services.</p>
-  </div>
-  <div class="service">
-   <h3>Installation & Maintenance</h3>
-   <p>Machine installation, inspection and regular maintenance support.</p>
-  </div>
-  <div class="service">
-   <h3>Spare Parts Replacement</h3>
-   <p>Replacement of damaged or faulty machine components.</p>
-  </div>
- </div>
- <div style="text-align:center;margin-top:20px">
-  <a class="btn" href="#" onclick="serviceEnquiry();return false">Book Repairing Enquiry</a>
- </div>
+<section id="services">
+<h2 class="section-title">Repairing & Maintenance Services</h2>
+<div class="services">
+<div class="service">
+<h3>Machine Repairing</h3>
+<p>Repairing support for vending machines and other equipment.</p>
+</div>
+<div class="service">
+<h3>Installation</h3>
+<p>Machine installation and setup assistance.</p>
+</div>
+<div class="service">
+<h3>Maintenance</h3>
+<p>Regular maintenance and machine servicing.</p>
+</div>
+<div class="service">
+<h3>Spare Parts Replacement</h3>
+<p>Replacement of faulty and damaged machine parts.</p>
+</div>
+</div>
 </section>
 
-<!-- ABOUT -->
-<section class="about">
- <div class="heading">
-  <h2>About One Stop Solution</h2>
- </div>
- <p>One Stop Solution provides machines, spare parts, repairing and maintenance solutions with customer-focused support.</p>
-</section>
-
-<!-- CONTACT FORM -->
 <section class="contact" id="contact">
- <div class="heading">
-  <h2>Contact Us</h2>
-  <p>Send your enquiry directly to our WhatsApp.</p>
- </div>
- <form class="form" onsubmit="sendEnquiry(event)">
-  <input id="name" type="text" placeholder="Your Name" required>
-  <input id="phone" type="tel" placeholder="Your Mobile Number" required>
-  <select id="interest" required>
-   <option value="">Select Enquiry Type</option>
-   <option>Product Purchase</option>
-   <option>Spare Parts</option>
-   <option>Repairing</option>
-   <option>Maintenance</option>
-  </select>
-  <textarea id="message" rows="4" placeholder="Write your requirement"></textarea>
-  <button type="submit">Submit Enquiry on WhatsApp</button>
- </form>
+<h2 class="section-title">Contact & Enquiry</h2>
+<div class="contact-box">
+<form id="contactForm">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Your Mobile Number" required>
+<select id="enquiry">
+<option>Product Enquiry</option>
+<option>Spare Parts</option>
+<option>Repairing</option>
+<option>Maintenance</option>
+</select>
+<textarea id="message" rows="4" placeholder="Write your requirement"></textarea>
+<button class="btn" type="submit">Send Enquiry on WhatsApp</button>
+</form>
+<p style="text-align:center;margin-top:18px">WhatsApp: 8010292729</p>
+</div>
 </section>
 
 <footer>
- <p>ONE STOP SOLUTION</p>
- <p>Products | Spare Parts | Repairing</p>
- <p>© <span id="year"></span> One Stop Solution. All Rights Reserved.</p>
+<p>© 2026 ONE STOP SOLUTION. All Rights Reserved.</p>
+<p>Products | Spare Parts | Repairing | Maintenance</p>
 </footer>
 
-<a class="float" id="floatWA" href="#" onclick="generalEnquiry();return false">WhatsApp</a>
-
 <script>
-// CHANGE THIS TO YOUR WHATSAPP NUMBER
-const WHATSAPP_NUMBER = "918010292729";
-
 const products = [
- ["SS Dustbin","High-quality stainless steel dustbins. Multiple sizes available.","3600","images/product1.jpg"],
- ["Sanitary Pad Vending Machine","Coin-operated napkin vending machine for schools, colleges and offices.","6000","images/product2.jpg"],
- ["Shoe Rack","Strong and durable shoe racks for homes, offices and institutions.","10000","images/product3.jpg"],
- ["GI Water Cooler","Water cooler solution. Contact us for model and configuration details.","30000","images/product4.jpg"],
- ["Automatic Sanitary Napkin Vending Machine","Automatic vending machine for dispensing sanitary napkins. Capacity: 50 napkins.","5000","images/product5.jpg"],
- ["Toilet Feedback Machine","Automatic feedback unit with Excellent, Clean and Dirty response buttons.","2500","images/product6.jpg"],
- ["Sanitary Napkin Incinerator","Machine for disposal of used sanitary napkins. Burning capacity: 50 pads per day.","3700","images/product7.jpg"],
- ["Manual Sanitary Napkin Vending Machine","Coin-operated machine. Insert a ₹5 coin and rotate the knob 360° to collect a napkin.","6000","images/product8.jpg"],
- ["Fully Automatic Free Vending Machine","Press the button to dispense a sanitary napkin. Capacity: 100 napkins.","6000","images/product9.jpg"],
- ["Cloth Bag Vending Machine","Automatic cloth bag vending solution. Contact us for details.","0","images/product10.jpg"]
+{name:"SS Dustbin",price:3600,desc:"Stainless steel dustbin. Multiple sizes available.",img:"product1.jpg"},
+{name:"Sanitary Pad Vending Machine",price:6000,desc:"Sanitary napkin vending machine for institutions.",img:"product2.jpg"},
+{name:"Shoe Rack",price:10000,desc:"Strong and durable shoe rack.",img:"product3.jpg"},
+{name:"GI Water Cooler",price:30000,desc:"Water cooler for commercial and institutional use.",img:"product4.jpg"},
+{name:"Automatic Sanitary Napkin Vending Machine",price:5000,desc:"Automatic vending machine with 50 napkin capacity.",img:"product5.jpg"},
+{name:"Toilet Feedback Machine",price:2500,desc:"Feedback machine for washrooms and facilities.",img:"product6.jpg"},
+{name:"Sanitary Napkin Incinerator",price:3700,desc:"Sanitary napkin disposal machine, 50 pads/day capacity.",img:"product7.jpg"},
+{name:"Manual Sanitary Napkin Vending Machine",price:6000,desc:"Manual sanitary napkin vending solution.",img:"product8.jpg"},
+{name:"Fully Automatic Free Vending Machine",price:6000,desc:"Fully automatic vending machine, 100 capacity.",img:"product9.jpg"},
+{name:"Cloth Bag Vending Machine",price:0,desc:"Contact us for price and details.",img:"product10.jpg"}
 ];
 
-function waLink(message){
- return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
-}
-
-function productEnquiry(name){
- window.open(waLink("Hello One Stop Solution, I want details and price for "+name+". Please contact me."),"_blank");
-}
-
-function partEnquiry(name){
- window.open(waLink("Hello One Stop Solution, I need "+name+". Please share availability and price."),"_blank");
-}
-
-function serviceEnquiry(){
- window.open(waLink("Hello One Stop Solution, I need machine repairing and maintenance service. Please contact me."),"_blank");
-}
-
-function generalEnquiry(){
- window.open(waLink("Hello One Stop Solution, I want product and service details."),"_blank");
-}
-
-function sendEnquiry(e){
- e.preventDefault();
- const name=document.getElementById("name").value;
- const phone=document.getElementById("phone").value;
- const interest=document.getElementById("interest").value;
- const message=document.getElementById("message").value;
- const text="New Enquiry - One Stop Solution\nName: "+name+
- "\nPhone: "+phone+"\nRequirement: "+interest+
- "\nMessage: "+message;
- window.open(waLink(text),"_blank");
-}
-
 const container=document.getElementById("productCards");
-products.forEach((p)=>{
- const price=Number(p[2]);
- const total=Math.round(price*1.18);
- const priceText=price>0
- ? `<div class="price">₹${price.toLocaleString("en-IN")}</div>
- <div class="gst">Base price + 18% GST</div>
- <div class="total">Total: ₹${total.toLocaleString("en-IN")} (Including GST)</div>`
- : `<div class="price">Price on Request</div>`;
- container.innerHTML+=`
- <div class="card">
-  <img src="${p[3]}" alt="${p[0]}">
-  <h3>${p[0]}</h3>
-  <p>${p[1]}</p>
-  ${priceText}
-  <a class="wa" href="#" onclick="productEnquiry('${p[0]}');return false">Enquire on WhatsApp</a>
- </div>`;
+
+products.forEach(p=>{
+const gst=p.price*0.18;
+const total=p.price+gst;
+const priceText=p.price===0
+?"Price on Request"
+:"₹"+p.price.toLocaleString("en-IN");
+const gstText=p.price===0
+?""
+:"<p class='small'>GST 18%: ₹"+gst.toLocaleString("en-IN",{maximumFractionDigits:2})+"</p><p class='small'>Price with GST: ₹"+total.toLocaleString("en-IN",{maximumFractionDigits:2})+"</p>";
+
+const msg=encodeURIComponent("Hello One Stop Solution, I want details and quotation for "+p.name);
+container.innerHTML+=`
+<div class="card">
+<img src="images/${p.img}" alt="${p.name}">
+<h3>${p.name}</h3>
+<p>${p.desc}</p>
+<div class="price">${priceText}</div>
+${gstText}
+<a class="btn" href="https://wa.me/918010292729?text=${msg}" target="_blank">WhatsApp Enquiry</a>
+</div>`;
 });
 
-// SLIDER
 let current=0;
 const slides=document.querySelectorAll(".slide");
-const dots=document.querySelectorAll(".dot");
+setInterval(()=>{
+slides[current].classList.remove("active");
+current=(current+1)%slides.length;
+slides[current].classList.add("active");
+},4000);
 
-function showSlide(n){
- slides[current].classList.remove("active");
- dots[current].classList.remove("active");
- current=(n+slides.length)%slides.length;
- slides[current].classList.add("active");
- dots[current].classList.add("active");
-}
-function moveSlide(n){showSlide(current+n)}
-setInterval(()=>moveSlide(1),4000);
-
-document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("contactForm").addEventListener("submit",function(e){
+e.preventDefault();
+const name=document.getElementById("name").value;
+const phone=document.getElementById("phone").value;
+const enquiry=document.getElementById("enquiry").value;
+const message=document.getElementById("message").value;
+const text=encodeURIComponent(
+"Hello One Stop Solution\nName: "+name+
+"\nMobile: "+phone+
+"\nEnquiry: "+enquiry+
+"\nMessage: "+message
+);
+window.open("https://wa.me/918010292729?text="+text,"_blank");
+});
 </script>
 
 </body>
 </html>
+```
