@@ -1,54 +1,361 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="One Stop Solution - Vending Machines, SS Dustbins, Shoe Racks, Water Coolers, Spare Parts, Repairing and Maintenance Services.">
-<title>ONE STOP SOLUTION | Products & Services</title>
+
+<title>One Stop Solution | Quality Products</title>
+<meta name="description" content="One Stop Solution - Sanitary Pad Vending Machines, Dustbins, Shoe Racks, Water Coolers, Incinerators and Spare Parts.">
+<meta name="keywords" content="One Stop Solution, Vending Machine, SS Dustbin, Shoe Rack, Water Cooler, Incinerator, Spare Parts">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#102a43">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#222;line-height:1.6}
-header{background:#092b50;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.logo{font-size:25px;font-weight:bold;color:#ff9d24}
-nav{display:flex;flex-wrap:wrap;gap:16px}
-nav a{color:white;text-decoration:none;font-weight:bold}
-nav a:hover{color:#ff9d24}
-.hero{background:linear-gradient(120deg,#092b50,#17649b);color:white;text-align:center;padding:65px 15px}
-.hero h1{font-size:38px;margin-bottom:12px}
-.hero p{font-size:18px}
-.btn{display:inline-block;background:#ff8c1a;color:white;padding:11px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:15px}
-section{padding:45px 5%}
-.section-title{text-align:center;font-size:29px;color:#092b50;margin-bottom:25px}
-.slider{max-width:1100px;margin:25px auto;position:relative;overflow:hidden;border-radius:12px;background:#e5eaf0}
-.slide{display:none}
-.slide.active{display:block}
-.slide img{width:100%;height:350px;object-fit:contain;background:white}
-.slide-caption{text-align:center;padding:12px;font-weight:bold;color:#092b50}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #00000012;text-align:center;padding-bottom:18px}
-.card img{width:100%;height:210px;object-fit:contain;background:#fff;padding:10px}
-.card h3{color:#092b50;margin:10px}
-.card p{padding:0 12px;font-size:14px}
-.price{font-size:19px;font-weight:bold;color:#e66c00;margin:10px}
-.small{font-size:13px;color:#555}
-.card .btn{margin-top:10px}
-.parts{background:#eaf1f8}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.service{background:white;padding:25px;border-radius:10px;text-align:center;box-shadow:0 3px 10px #00000010}
-.service h3{color:#092b50;margin-bottom:8px}
-.contact{background:#092b50;color:white}
-.contact .section-title{color:white}
-.contact-box{max-width:600px;margin:auto}
-input,textarea,select{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:6px;font-size:15px}
-button{border:0;cursor:pointer}
-footer{background:#061c33;color:white;text-align:center;padding:20px}
-@media(max-width:600px){
-.hero h1{font-size:29px}
-.slide img{height:220px}
-header{justify-content:center}
-nav{justify-content:center}
+:root{
+--navy:#102a43;
+--blue:#1769aa;
+--light:#f3f7fb;
+--ink:#243b53;
+--muted:#627d98;
+--green:#16834a;
+--white:#fff;
+--shadow:0 10px 28px rgba(16,42,67,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+color:var(--ink);
+line-height:1.6;
+background:#fff;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:20;
+background:white;
+box-shadow:0 3px 16px rgba(16,42,67,.08);
+}
+.header{
+min-height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+.logo{
+font-size:23px;
+font-weight:900;
+color:var(--navy);
+line-height:1.1;
+}
+.logo span{color:var(--blue)}
+.logo small{
+display:block;
+font-size:10px;
+letter-spacing:3px;
+}
+.nav{display:flex;gap:24px;align-items:center}
+.nav a{font-size:14px;font-weight:700}
+.nav a:hover{color:var(--blue)}
+.menu-btn{
+display:none;
+border:0;
+background:var(--navy);
+color:white;
+padding:9px 13px;
+border-radius:8px;
+font-size:20px;
+}
+
+/* HERO */
+.hero{
+padding:76px 0 66px;
+background:linear-gradient(115deg,#102a43,#1769aa);
+color:white;
+}
+.tag{
+display:inline-block;
+background:rgba(255,255,255,.15);
+padding:7px 14px;
+border-radius:30px;
+font-size:12px;
+font-weight:800;
+letter-spacing:1px;
+}
+.hero h1{
+font-size:clamp(34px,5vw,56px);
+line-height:1.12;
+margin:20px 0 14px;
+max-width:760px;
+}
+.hero p{
+font-size:18px;
+max-width:720px;
+color:#e6f1fa;
+}
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin:25px 0;
+}
+.btn,.call-btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 19px;
+border-radius:8px;
+font-weight:800;
+}
+.btn{background:#ffcc43;color:#172b4d}
+.call-btn{
+border:1px solid white;
+color:white;
+}
+.hero-features{
+display:flex;
+gap:22px;
+flex-wrap:wrap;
+font-size:14px;
+font-weight:700;
+}
+
+/* SECTIONS */
+section{padding:58px 0}
+.section-title{
+text-align:center;
+color:var(--navy);
+font-size:clamp(26px,3vw,36px);
+margin:0 0 8px;
+}
+.section-description{
+text-align:center;
+color:var(--muted);
+max-width:720px;
+margin:0 auto 30px;
+}
+
+/* PRODUCT CARDS */
+.products-section,.spares-section{background:var(--light)}
+.products{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:22px;
+}
+.product-card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:var(--shadow);
+display:flex;
+flex-direction:column;
+border:1px solid #e6edf4;
+}
+.product-image-wrap{
+height:245px;
+background:#f6f8fa;
+display:grid;
+place-items:center;
+overflow:hidden;
+padding:12px;
+}
+.product-card img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
+.image-fallback{
+display:none;
+place-items:center;
+text-align:center;
+color:#829ab1;
+font-weight:700;
+padding:25px;
+}
+.product-content{
+padding:19px;
+display:flex;
+flex-direction:column;
+flex:1;
+}
+.product-card h3{
+font-size:19px;
+color:var(--navy);
+line-height:1.3;
+margin:0 0 8px;
+}
+.product-card p{
+color:var(--muted);
+font-size:14px;
+margin:0 0 10px;
+}
+.specs{
+padding-left:18px;
+margin:0 0 13px;
+color:#486581;
+font-size:13px;
+}
+.price{
+font-size:24px;
+color:var(--green);
+font-weight:900;
+margin-top:auto;
+}
+.gst-note{
+font-size:12px!important;
+margin:0!important;
+}
+.total{
+font-size:14px;
+font-weight:800;
+color:var(--navy);
+margin:4px 0 14px;
+}
+.product-card .btn{
+background:var(--blue);
+color:white;
+width:100%;
+margin-top:4px;
+}
+.product-card .btn:hover{background:var(--navy)}
+
+/* ABOUT */
+.about-box{
+max-width:850px;
+margin:22px auto 0;
+text-align:center;
+background:var(--light);
+padding:28px;
+border-radius:14px;
+}
+
+/* SPARE PARTS */
+.spare-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:var(--shadow);
+}
+.spare-card img{
+width:100%;
+height:220px;
+object-fit:contain;
+padding:12px;
+background:#f6f8fa;
+}
+.spare-card h3{
+color:var(--navy);
+margin:12px 16px 4px;
+}
+.spare-card p{
+color:var(--muted);
+font-size:14px;
+margin:0 16px 18px;
+}
+
+/* LOCATION AND CONTACT */
+.map-box{
+overflow:hidden;
+border-radius:14px;
+box-shadow:var(--shadow);
+}
+.map-box iframe{
+display:block;
+width:100%;
+height:350px;
+border:0;
+}
+.address{
+text-align:center;
+margin-top:14px;
+color:var(--muted);
+}
+.contact-section{background:var(--light)}
+.contact-box{
+max-width:700px;
+margin:24px auto 0;
+background:white;
+padding:28px;
+border-radius:14px;
+box-shadow:var(--shadow);
+text-align:center;
+}
+.contact-actions{
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:18px;
+}
+.contact-actions .btn{
+background:var(--blue);
+color:white;
+}
+.contact-actions .call-btn{
+background:var(--navy);
+color:white;
+border:0;
+}
+
+/* FOOTER */
+footer{
+background:#0b1f33;
+color:#d9e2ec;
+text-align:center;
+padding:30px 15px;
+font-size:13px;
+}
+footer h3{color:white;margin:0 0 5px}
+.whatsapp-btn{
+position:fixed;
+right:18px;
+bottom:18px;
+width:56px;
+height:56px;
+border-radius:50%;
+background:#20b85a;
+color:white;
+display:grid;
+place-items:center;
+font-weight:900;
+box-shadow:0 5px 18px rgba(0,0,0,.22);
+z-index:30;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.products{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+.header{min-height:66px}
+.menu-btn{display:block}
+.nav{
+display:none;
+position:absolute;
+left:0;
+right:0;
+top:66px;
+background:white;
+padding:15px 4%;
+box-shadow:0 8px 15px rgba(16,42,67,.12);
+flex-direction:column;
+align-items:flex-start;
+}
+.nav.open{display:flex}
+.hero{padding:54px 0}
+.hero p{font-size:16px}
+.hero-features{gap:10px;flex-direction:column}
+.products{grid-template-columns:1fr}
+.product-image-wrap{height:260px}
+section{padding:44px 0}
+.contact-box{padding:20px}
 }
 </style>
 </head>
@@ -56,178 +363,340 @@ nav{justify-content:center}
 <body>
 
 <header>
-<div class="logo">ONE STOP SOLUTION</div>
-<nav>
+<div class="container header">
+<a class="logo" href="#home">ONE STOP <span>SOLUTION</span><small>QUALITY PRODUCTS • RELIABLE SERVICE</small></a>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+<nav class="nav" id="nav">
 <a href="#home">Home</a>
 <a href="#products">Products</a>
 <a href="#spares">Spare Parts</a>
-<a href="#services">Repairing</a>
+<a href="#about">About</a>
+<a href="#location">Location</a>
 <a href="#contact">Contact</a>
 </nav>
+</div>
 </header>
 
-<div class="hero" id="home">
-<h1>ONE STOP SOLUTION</h1>
-<p>Products | Spare Parts | Repairing | Maintenance</p>
-<p>Quality Products and Reliable Services at One Place</p>
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container">
+<span class="tag">SMART PRODUCTS • COMPLETE SOLUTIONS</span>
+<h1>One Stop Solution for Your Business Needs</h1>
+<p>Explore quality products for hygiene, waste management and everyday utility needs. We offer reliable products, spare parts and customer support.</p>
+<div class="hero-buttons">
 <a class="btn" href="#products">Explore Products</a>
+<a class="call-btn" href="https://wa.me/918010292729" target="_blank" rel="noopener">WhatsApp Enquiry</a>
 </div>
-
-<section>
-<h2 class="section-title">Our Product Gallery</h2>
-<div class="slider">
-<div class="slide active">
-<img src="images/slide1.jpg" alt="Our Products" onerror="this.style.display='none'">
-<div class="slide-caption">Quality Products</div>
-</div>
-<div class="slide">
-<img src="images/slide2.jpg" alt="Vending Machines" onerror="this.style.display='none'">
-<div class="slide-caption">Vending Machine Solutions</div>
-</div>
-<div class="slide">
-<img src="images/slide3.jpg" alt="Water Coolers and Dustbins" onerror="this.style.display='none'">
-<div class="slide-caption">Complete Product Range</div>
+<div class="hero-features">
+<span>✓ Quality Products</span>
+<span>✓ Reliable Service</span>
+<span>✓ Spare Parts Available</span>
 </div>
 </div>
 </section>
 
-<section id="products">
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+<div class="container">
 <h2 class="section-title">Our Products</h2>
-<div class="products" id="productCards"></div>
-</section>
+<p class="section-description">Explore our product range, specifications and prices. Prices are before GST unless the total is specified.</p>
 
-<section class="parts" id="spares">
-<h2 class="section-title">Spare Parts Catalogue</h2>
 <div class="products">
-<div class="card">
-<img src="images/part1.jpg" alt="Electrical Components">
+
+<!-- 1 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="ss-dustbin.png" alt="SS Dustbin" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">SS Dustbin<br>Product Photo</div>
+</div>
+<div class="product-content">
+<h3>SS Dustbin</h3>
+<p>High-quality stainless steel dustbins. Multiple sizes available.</p>
+<ul class="specs"><li>Material: Stainless Steel</li><li>Multiple sizes available</li></ul>
+<div class="price">₹3,600</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹4,248 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20SS%20Dustbin" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 2 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="vending-machine.jpg" alt="Sanitary Pad Vending Machine" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Sanitary Pad Vending Machine</div>
+</div>
+<div class="product-content">
+<h3>Sanitary Pad Vending Machine</h3>
+<p>Coin-operated napkin vending machine for schools, colleges, offices and public places.</p>
+<ul class="specs"><li>Manual coin-operated model</li><li>Insert coin and rotate the knob</li></ul>
+<div class="price">₹6,000</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹7,080 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Sanitary%20Pad%20Vending%20Machine" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 3 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="shoe-rack.png" alt="Shoe Rack" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Shoe Rack</div>
+</div>
+<div class="product-content">
+<h3>Shoe Rack</h3>
+<p>Strong and durable shoe racks for homes, offices and institutions.</p>
+<ul class="specs"><li>Durable construction</li><li>Suitable for homes and institutions</li></ul>
+<div class="price">₹10,000</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹11,800 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Shoe%20Rack" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 4 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="water-cooler.png" alt="GI Water Cooler" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">GI Water Cooler</div>
+</div>
+<div class="product-content">
+<h3>GI Water Cooler</h3>
+<p>Water cooler solution for commercial and institutional use.</p>
+<ul class="specs"><li>GI body</li><li>Model details available on enquiry</li></ul>
+<div class="price">₹30,000</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹35,400 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20GI%20Water%20Cooler" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 5 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="automatic-vending-50.png" alt="Automatic Vending Machine 50" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Automatic Vending Machine 50</div>
+</div>
+<div class="product-content">
+<h3>Automatic Sanitary Napkin Vending Machine</h3>
+<p>Automatic vending machine for dispensing sanitary napkins.</p>
+<ul class="specs"><li>Capacity: 50 napkins</li><li>Type: Automatic</li></ul>
+<div class="price">₹5,000</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹5,900 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Automatic%2050%20Capacity%20Vending%20Machine" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 6 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="toilet-feedback-machine.png" alt="Toilet Feedback Machine" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Toilet Feedback Machine</div>
+</div>
+<div class="product-content">
+<h3>Toilet Feedback Machine</h3>
+<p>Fully automatic feedback unit with Excellent, Clean and Dirty response buttons.</p>
+<ul class="specs"><li>Type: Fully Automatic</li><li>Buttons: Excellent / Clean / Dirty</li></ul>
+<div class="price">₹2,500</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹2,950 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Toilet%20Feedback%20Machine" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 7 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="napkin-incinerator-50.png" alt="Sanitary Napkin Incinerator" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Sanitary Napkin Incinerator</div>
+</div>
+<div class="product-content">
+<h3>Sanitary Napkin Incinerator</h3>
+<p>Machine for disposal of used sanitary napkins.</p>
+<ul class="specs"><li>Burning capacity: 50 pads per day</li><li>Electric operation</li></ul>
+<div class="price">₹3,700</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹4,366 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Sanitary%20Napkin%20Incinerator" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 8 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="manual-vending-100.png" alt="Manual Vending Machine 100" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Manual Vending Machine 100</div>
+</div>
+<div class="product-content">
+<h3>Manual Sanitary Napkin Vending Machine</h3>
+<p>Coin-operated machine. Insert a ₹5 coin, rotate the knob 360° and collect a napkin.</p>
+<ul class="specs"><li>Capacity: 100 napkins</li><li>Type: Manual</li></ul>
+<div class="price">₹6,000</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹7,080 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Manual%20Vending%20Machine" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 9 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="free-vending-100.png" alt="Free Vending Machine 100" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Free Vending Machine 100</div>
+</div>
+<div class="product-content">
+<h3>Fully Automatic Free Vending Machine</h3>
+<p>Press the button to dispense a sanitary napkin.</p>
+<ul class="specs"><li>Capacity: 100 napkins</li><li>Type: Fully Automatic</li><li>Free-vend operation</li></ul>
+<div class="price">₹6,000</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹7,080 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Fully%20Automatic%20Free%20Vending%20Machine" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 10 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="solid-waste-incinerator-10kg.png" alt="Solid Waste Incinerator" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Solid Waste Incinerator</div>
+</div>
+<div class="product-content">
+<h3>Solid Waste Incinerator</h3>
+<p>Solid waste incineration unit for suitable waste-management applications.</p>
+<ul class="specs"><li>Burning capacity: 10 kg per day</li></ul>
+<div class="price">₹37,000</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹43,660 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Solid%20Waste%20Incinerator" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+<!-- 11 -->
+<article class="product-card">
+<div class="product-image-wrap">
+<img src="cloth-bag-vending-100.png" alt="Cloth Bag Vending Machine" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="image-fallback">Cloth Bag Vending Machine</div>
+</div>
+<div class="product-content">
+<h3>Cloth Bag Vending Machine</h3>
+<p>Vending machine for dispensing reusable cloth bags as an alternative to single-use plastic bags.</p>
+<ul class="specs"><li>Capacity: 100 bags</li><li>Type: Fully Automatic</li></ul>
+<div class="price">₹12,500</div>
+<p class="gst-note">Base price + 18% GST</p>
+<div class="total">Total: ₹14,750 (Including GST)</div>
+<a class="btn" href="https://wa.me/918010292729?text=I%20want%20details%20for%20Cloth%20Bag%20Vending%20Machine" target="_blank">Enquire on WhatsApp</a>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- SPARE PARTS -->
+<section class="spares-section" id="spares">
+<div class="container">
+<h2 class="section-title">Spare Parts</h2>
+<p class="section-description">Spare parts and accessories for our machines. Contact us for availability and details.</p>
+
+<div class="products">
+
+<div class="spare-card">
+<img src="images/part1.jpg" alt="Electrical Components" onerror="this.style.display='none'">
 <h3>Electrical Components</h3>
-<p>Electrical parts and components for machines.</p>
-<a class="btn" href="https://wa.me/918010292729?text=Hello%2C%20I%20need%20electrical%20spare%20parts" target="_blank">Enquire on WhatsApp</a>
+<p>Electrical spare parts and components for machines.</p>
 </div>
-<div class="card">
-<img src="images/part2.jpg" alt="Mechanical Parts">
+
+<div class="spare-card">
+<img src="images/part2.jpg" alt="Mechanical Parts" onerror="this.style.display='none'">
 <h3>Mechanical Parts</h3>
-<p>Mechanical spare parts and machine accessories.</p>
-<a class="btn" href="https://wa.me/918010292729?text=Hello%2C%20I%20need%20mechanical%20spare%20parts" target="_blank">Enquire on WhatsApp</a>
+<p>Mechanical spare parts and replacement components.</p>
 </div>
-<div class="card">
-<img src="images/part3.jpg" alt="Machine Accessories">
+
+<div class="spare-card">
+<img src="images/part3.jpg" alt="Machine Accessories" onerror="this.style.display='none'">
 <h3>Machine Accessories</h3>
-<p>Accessories and replacement parts for machines.</p>
-<a class="btn" href="https://wa.me/918010292729?text=Hello%2C%20I%20need%20machine%20accessories" target="_blank">Enquire on WhatsApp</a>
+<p>Accessories and useful parts for machine maintenance.</p>
+</div>
+
 </div>
 </div>
 </section>
 
-<section id="services">
-<h2 class="section-title">Repairing & Maintenance Services</h2>
-<div class="services">
-<div class="service">
-<h3>Machine Repairing</h3>
-<p>Repairing support for vending machines and other equipment.</p>
-</div>
-<div class="service">
-<h3>Installation</h3>
-<p>Machine installation and setup assistance.</p>
-</div>
-<div class="service">
-<h3>Maintenance</h3>
-<p>Regular maintenance and machine servicing.</p>
-</div>
-<div class="service">
-<h3>Spare Parts Replacement</h3>
-<p>Replacement of faulty and damaged machine parts.</p>
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+<h2 class="section-title">About One Stop Solution</h2>
+<div class="about-box">
+<p>Welcome to One Stop Solution. We offer practical products for hygiene, waste management and everyday utility needs. Our product range includes stainless steel dustbins, shoe racks, water coolers, sanitary napkin vending machines, incinerators, cloth bag vending machines and spare parts. Our goal is to provide quality products and reliable customer support.</p>
 </div>
 </div>
 </section>
 
-<section class="contact" id="contact">
-<h2 class="section-title">Contact & Enquiry</h2>
+<!-- LOCATION -->
+<section id="location">
+<div class="container">
+<h2 class="section-title">Our Location</h2>
+<p class="section-description">Visit us at Faridabad, Haryana.</p>
+<div class="map-box">
+<iframe src="https://www.google.com/maps?q=Sector+74+Mirzapur+Faridabad+Haryana&output=embed" loading="lazy" allowfullscreen title="Our location"></iframe>
+</div>
+<p class="address">Ballabgarh Bypass Road, Sector 74, Mirzapur, Near Lords Cricket Ground, Faridabad, Haryana.</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+<div class="container">
+<h2 class="section-title">Contact Us</h2>
 <div class="contact-box">
-<form id="contactForm">
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="tel" id="phone" placeholder="Your Mobile Number" required>
-<select id="enquiry">
-<option>Product Enquiry</option>
-<option>Spare Parts</option>
-<option>Repairing</option>
-<option>Maintenance</option>
-</select>
-<textarea id="message" rows="4" placeholder="Write your requirement"></textarea>
-<button class="btn" type="submit">Send Enquiry on WhatsApp</button>
-</form>
-<p style="text-align:center;margin-top:18px">WhatsApp: 8010292729</p>
+<p><strong>Business:</strong> One Stop Solution</p>
+<p><strong>Phone:</strong> <a href="tel:+918010292729">8010292729</a></p>
+<p><strong>Address:</strong> Ballabgarh Bypass Road, Sector 74, Mirzapur, Near Lords Cricket Ground, Faridabad, Haryana.</p>
+<div class="contact-actions">
+<a class="btn" href="https://wa.me/918010292729" target="_blank" rel="noopener">WhatsApp Us</a>
+<a class="call-btn" href="tel:+918010292729">Call Us</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sector+74+Mirzapur+Faridabad" target="_blank" rel="noopener">Find Us on Map</a>
+</div>
+</div>
 </div>
 </section>
+
+</main>
 
 <footer>
-<p>© 2026 ONE STOP SOLUTION. All Rights Reserved.</p>
-<p>Products | Spare Parts | Repairing | Maintenance</p>
+<h3>ONE STOP SOLUTION</h3>
+<p>Quality Products | Trusted Service</p>
+<p>Faridabad, Haryana, India</p>
+<p>Phone: 8010292729</p>
+<p>© <span id="year">2026</span> One Stop Solution. All Rights Reserved.</p>
 </footer>
 
+<a class="whatsapp-btn" href="https://wa.me/918010292729" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+
 <script>
-const products = [
-{name:"SS Dustbin",price:3600,desc:"Stainless steel dustbin. Multiple sizes available.",img:"product1.jpg"},
-{name:"Sanitary Pad Vending Machine",price:6000,desc:"Sanitary napkin vending machine for institutions.",img:"product2.jpg"},
-{name:"Shoe Rack",price:10000,desc:"Strong and durable shoe rack.",img:"product3.jpg"},
-{name:"GI Water Cooler",price:30000,desc:"Water cooler for commercial and institutional use.",img:"product4.jpg"},
-{name:"Automatic Sanitary Napkin Vending Machine",price:5000,desc:"Automatic vending machine with 50 napkin capacity.",img:"product5.jpg"},
-{name:"Toilet Feedback Machine",price:2500,desc:"Feedback machine for washrooms and facilities.",img:"product6.jpg"},
-{name:"Sanitary Napkin Incinerator",price:3700,desc:"Sanitary napkin disposal machine, 50 pads/day capacity.",img:"product7.jpg"},
-{name:"Manual Sanitary Napkin Vending Machine",price:6000,desc:"Manual sanitary napkin vending solution.",img:"product8.jpg"},
-{name:"Fully Automatic Free Vending Machine",price:6000,desc:"Fully automatic vending machine, 100 capacity.",img:"product9.jpg"},
-{name:"Cloth Bag Vending Machine",price:0,desc:"Contact us for price and details.",img:"product10.jpg"}
-];
+document.getElementById('year').textContent=new Date().getFullYear();
 
-const container=document.getElementById("productCards");
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
 
-products.forEach(p=>{
-const gst=p.price*0.18;
-const total=p.price+gst;
-const priceText=p.price===0
-?"Price on Request"
-:"₹"+p.price.toLocaleString("en-IN");
-const gstText=p.price===0
-?""
-:"<p class='small'>GST 18%: ₹"+gst.toLocaleString("en-IN",{maximumFractionDigits:2})+"</p><p class='small'>Price with GST: ₹"+total.toLocaleString("en-IN",{maximumFractionDigits:2})+"</p>";
-
-const msg=encodeURIComponent("Hello One Stop Solution, I want details and quotation for "+p.name);
-container.innerHTML+=`
-<div class="card">
-<img src="images/${p.img}" alt="${p.name}">
-<h3>${p.name}</h3>
-<p>${p.desc}</p>
-<div class="price">${priceText}</div>
-${gstText}
-<a class="btn" href="https://wa.me/918010292729?text=${msg}" target="_blank">WhatsApp Enquiry</a>
-</div>`;
+menuBtn.addEventListener('click',()=>{
+const open=nav.classList.toggle('open');
+menuBtn.textContent=open?'✕':'☰';
+menuBtn.setAttribute('aria-expanded',String(open));
 });
 
-let current=0;
-const slides=document.querySelectorAll(".slide");
-setInterval(()=>{
-slides[current].classList.remove("active");
-current=(current+1)%slides.length;
-slides[current].classList.add("active");
-},4000);
-
-document.getElementById("contactForm").addEventListener("submit",function(e){
-e.preventDefault();
-const name=document.getElementById("name").value;
-const phone=document.getElementById("phone").value;
-const enquiry=document.getElementById("enquiry").value;
-const message=document.getElementById("message").value;
-const text=encodeURIComponent(
-"Hello One Stop Solution\nName: "+name+
-"\nMobile: "+phone+
-"\nEnquiry: "+enquiry+
-"\nMessage: "+message
-);
-window.open("https://wa.me/918010292729?text="+text,"_blank");
+nav.querySelectorAll('a').forEach(link=>{
+link.addEventListener('click',()=>{
+nav.classList.remove('open');
+menuBtn.textContent='☰';
+menuBtn.setAttribute('aria-expanded','false');
+});
 });
 </script>
 
 </body>
 </html>
-```
